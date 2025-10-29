@@ -4,24 +4,44 @@ import { getImageUrl } from '../../Utils/ProductUtils';
 
 
 
-const CardItem = () => {
+const CardItem = ({ subTotal }) => {
     const [itemNumber, setIemNumber] = useState([]);
-
-    const { cardData } = useContext(ProductContext);
-
+    const { cardData, setCardData } = useContext(ProductContext);
 
 
 
 
-    const handleInCrease = (id) => {
 
-        setIemNumber((prev) => ({
+    const handleDelete = (id) => {
+        const filteredItem = cardData.filter((item) => {
+            return item.id !== id;
+        });
 
-            ...prev,
-            [id]: (prev[id] || 1) + 1
-
-        }));
+        setCardData([...filteredItem])
     };
+
+
+
+
+
+    const handleInCrease = (id, price, inStock) => {
+
+
+        setIemNumber((prev) => {
+
+            const current = prev[id] || 1;
+
+            if (current < inStock) {
+                return ({ ...prev, [id]: current + 1 })
+            } else {
+                return prev
+            };
+
+
+
+        });
+    };
+
     const handleDecrease = (id) => {
         setIemNumber((prev) => {
             const current = prev[id] || 1;
@@ -30,6 +50,7 @@ const CardItem = () => {
             } else {
                 return prev
             }
+
         })
     };
 
@@ -49,7 +70,7 @@ const CardItem = () => {
                             <div className="flex-grow">
                                 <div className="flex justify-between">
                                     <h3 className="font-medium"> {item.title}</h3>
-                                    <span className="text-red-500 text-sm">×</span>
+                                    <button onClick={() => handleDelete(item.id)} className="text-red-500 btn ">  × </button>
                                 </div>
                                 <p className="text-sm text-gray-500">Size:  {item.size}</p>
                                 <p className="text-sm text-gray-500">Color:  {item.color}</p>
@@ -58,7 +79,7 @@ const CardItem = () => {
                                     <div className="flex items-center space-x-2">
                                         <button onClick={() => handleDecrease(item.id)} className="w-6 h-6   rounded flex items-center justify-center">−</button>
                                         <span className="text-sm">{quantity}</span>
-                                        <button onClick={() => handleInCrease(item.id)} className="w-6 h-6  rounded flex items-center justify-center">+</button>
+                                        <button onClick={() => handleInCrease(item.id, item.price, item.inStock)} className="w-6 h-6  rounded flex items-center justify-center">+</button>
                                     </div>
                                 </div>
                             </div>

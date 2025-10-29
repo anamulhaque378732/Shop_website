@@ -4,10 +4,11 @@ export const data = [
         cover: "image1.png",
         title: "Gradient Graphic T-shirt",
         rating: "4/5",
-        inStock: 130,
+        inStock: 10,
         price: 145,
         size: "large",
-        color: "green"
+        color: "green",
+        date: "10-12-2024"
     },
     {
         id: crypto.randomUUID(),
@@ -17,7 +18,8 @@ export const data = [
         inStock: 150,
         price: 180,
         size: "large",
-        color: "black"
+        color: "black",
+        date: "10-11-2024"
     },
     {
         id: crypto.randomUUID(),
@@ -27,7 +29,8 @@ export const data = [
         inStock: 155,
         price: 120,
         size: "large",
-        color: "white"
+        color: "white",
+        date: "10-02-2024"
     },
     {
         id: crypto.randomUUID(),
@@ -37,7 +40,8 @@ export const data = [
         inStock: 222,
         price: 240,
         size: "large",
-        color: "red"
+        color: "red",
+        date: "10-01-2024"
     },
     {
         id: crypto.randomUUID(),
@@ -47,7 +51,8 @@ export const data = [
         inStock: 214,
         price: 180,
         size: "large",
-        color: "blue"
+        color: "blue",
+        date: "20-12-2024"
     },
     {
         id: crypto.randomUUID(),
@@ -57,7 +62,8 @@ export const data = [
         inStock: 132,
         price: 130,
         size: "large",
-        color: "gray"
+        color: "gray",
+        date: "10-12-2025"
     },
     {
         id: crypto.randomUUID(),
@@ -67,7 +73,8 @@ export const data = [
         inStock: 86,
         price: 212,
         size: "large",
-        color: "Pink"
+        color: "Pink",
+        date: "10-12-2023"
     },
     {
         id: crypto.randomUUID(),
@@ -77,7 +84,8 @@ export const data = [
         inStock: 45,
         price: 145,
         size: "large",
-        color: "black"
+        color: "black",
+        date: "10-06-2024"
     },
     {
         id: crypto.randomUUID(),
@@ -87,7 +95,8 @@ export const data = [
         inStock: 32,
         price: 80,
         size: "large",
-        color: "white"
+        color: "white",
+        date: "29-12-2024"
     }
 
 ];

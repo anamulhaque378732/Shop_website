@@ -1,32 +1,24 @@
 import { useContext } from 'react';
+import { toast } from 'react-toastify';
 import { ProductContext } from "../../Context/Context";
 import { getImageUrl } from "../../Utils/ProductUtils";
 
 
 
-
 const ProductCard = ({ product }) => {
     const { cardData, setCardData } = useContext(ProductContext);
-
-
-
     const { title, rating, price, inStock, cover } = product;
 
     const handleAddToCard = (product) => {
-
         const found = cardData.find((item) => {
-
             return item.id === product.id
         });
         if (!found) {
-            setCardData([...cardData, product])
+            setCardData([...cardData, product]);
+            toast.success(`${product.title} Added successfully`)
         } else {
-            console.error("product added already")
+            toast.error(`${product.title} Add already`)
         }
-
-
-
-
     };
 
     return (
