@@ -1,7 +1,7 @@
-import { data } from "../../Data/data";
+
 import ProductCard from "../ProductCard/ProductCard";
 
-const AllProduct = () => {
+const AllProduct = ({ data }) => {
     return (
         <div className="grid grid-cols-3 gap-4 mt-10">
             {

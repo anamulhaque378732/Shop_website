@@ -21,11 +21,7 @@ const CardItem = ({ subTotal }) => {
     };
 
 
-
-
-
     const handleInCrease = (id, price, inStock) => {
-
 
         setIemNumber((prev) => {
 
@@ -37,8 +33,6 @@ const CardItem = ({ subTotal }) => {
                 return prev
             };
 
-
-
         });
     };
 
@@ -49,9 +43,8 @@ const CardItem = ({ subTotal }) => {
                 return ({ ...prev, [id]: current - 1 })
             } else {
                 return prev
-            }
-
-        })
+            };
+        });
     };
 
     return (

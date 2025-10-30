@@ -1,17 +1,5 @@
 
-
-
-
-
-
-
-
 const CardSummary = ({ subTotal, discount, total }) => {
-
-
-
-
-
 
     return (
 
