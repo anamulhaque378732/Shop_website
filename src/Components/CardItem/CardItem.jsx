@@ -4,12 +4,9 @@ import { getImageUrl } from '../../Utils/ProductUtils';
 
 
 
-const CardItem = ({ subTotal }) => {
+const CardItem = () => {
     const [itemNumber, setIemNumber] = useState([]);
     const { cardData, setCardData } = useContext(ProductContext);
-
-
-
 
 
     const handleDelete = (id) => {
@@ -24,7 +21,6 @@ const CardItem = ({ subTotal }) => {
     const handleInCrease = (id, price, inStock) => {
 
         setIemNumber((prev) => {
-
             const current = prev[id] || 1;
 
             if (current < inStock) {

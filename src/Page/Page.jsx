@@ -21,7 +21,8 @@ const Page = () => {
                             setAllData={setAllData}
                         />
                         <AllProduct
-                            data={allData} />
+                            data={allData}
+                        />
                     </div>
                     <CardSection></CardSection>
                 </div>

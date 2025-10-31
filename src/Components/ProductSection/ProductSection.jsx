@@ -1,10 +1,6 @@
 import { useEffect, useState } from 'react';
 
 
-
-
-
-
 const ProductSection = ({ allData, setAllData }) => {
     const [sortType, setSortType] = useState("All");
 
@@ -20,7 +16,6 @@ const ProductSection = ({ allData, setAllData }) => {
         };
 
         setAllData(sorted)
-
 
     }, [sortType]);
 

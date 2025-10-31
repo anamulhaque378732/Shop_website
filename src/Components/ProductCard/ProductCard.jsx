@@ -7,18 +7,25 @@ import { getImageUrl } from "../../Utils/ProductUtils";
 
 const ProductCard = ({ product }) => {
     const { cardData, setCardData } = useContext(ProductContext);
+
     const { title, rating, price, inStock, cover } = product;
 
+    const found = cardData.find((item) => {
+        return item.id === product.id
+    });
+
     const handleAddToCard = (product) => {
-        const found = cardData.find((item) => {
-            return item.id === product.id
-        });
+
         if (!found) {
             setCardData([...cardData, product]);
             toast.success(`${product.title} Added successfully`)
         } else {
+
             toast.error(`${product.title} Add already`)
         }
+
+
+
     };
 
     return (
@@ -39,7 +46,7 @@ const ProductCard = ({ product }) => {
                     <span className="text-xs  ">( {inStock} pcs )</span>
                 </div>
                 <p className="font-bold  ">  ${price} </p>
-                <button onClick={() => handleAddToCard(product)} className="w-full mt-2 bg-red-800 py-1 text-gray-100 rounded flex items-center justify-center">Add To Card</button>
+                <button onClick={() => handleAddToCard(product)} className="w-full mt-2 bg-red-800 py-1 text-gray-100 rounded flex items-center justify-center">  {found ? "Remove from  Card" : "Add To Card"} </button>
             </div>
         </div>
     );

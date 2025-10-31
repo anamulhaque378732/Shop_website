@@ -16,9 +16,7 @@ const CardSection = () => {
         <div className="lg:col-span-1 lg:mt-28">
             <div className="  rounded-lg p-6 border border-gray-200">
                 <h2 className="text-2xl font-bold mb-6">YOUR CART</h2>
-                <CardItem
-                    subTotal={subTotal}
-                />
+                <CardItem />
 
                 <CardSummary
                     subTotal={subTotal}
